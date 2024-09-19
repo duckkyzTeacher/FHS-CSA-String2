@@ -1,0 +1,230 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: doubleCharTest
+      id: doublecharTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: doubleCharTest
+        setup-command: ''
+        command: gradle test --tests TestString2.doubleCharTest
+        timeout: 10
+        max-score: 2
+    - name: countCodeTest
+      id: countcodeTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: countCodeTest
+        setup-command: ''
+        command: gradle test --tests TestString2.countCodeTest
+        timeout: 10
+        max-score: 2
+    - name: bobThereTest
+      id: bobthereTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: bobThereTest
+        setup-command: ''
+        command: gradle test --tests TestString2.bobThereTest
+        timeout: 10
+        max-score: 2
+    - name: repeatEndTest
+      id: repeatendTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: repeatEndTest
+        setup-command: ''
+        command: gradle test --tests TestString2.repeatEndTest
+        timeout: 10
+        max-score: 2
+    - name: prefixAgainTest
+      id: prefixagainTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: prefixAgainTest
+        setup-command: ''
+        command: gradle test --tests TestString2.prefixAgainTest
+        timeout: 10
+        max-score: 2
+    - name: sameStarCharTest
+      id: samestarcharTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: sameStarCharTest
+        setup-command: ''
+        command: gradle test --tests TestString2.sameStarCharTest
+        timeout: 10
+        max-score: 2
+    - name: starOutTest
+      id: staroutTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: starOutTest
+        setup-command: ''
+        command: gradle test --tests TestString2.starOutTest
+        timeout: 10
+        max-score: 2
+    - name: countHiTest
+      id: counthiTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: countHiTest
+        setup-command: ''
+        command: gradle test --tests TestString2.countHiTest
+        timeout: 10
+        max-score: 2
+    - name: endOtherTest
+      id: endotherTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: endOtherTest
+        setup-command: ''
+        command: gradle test --tests TestString2.endOtherTest
+        timeout: 10
+        max-score: 2
+    - name: xyBalanceTest
+      id: xybalanceTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: xyBalanceTest
+        setup-command: ''
+        command: gradle test --tests TestString2.xyBalanceTest
+        timeout: 10
+        max-score: 2
+    - name: repeatFrontTest
+      id: repeatfrontTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: repeatFrontTest
+        setup-command: ''
+        command: gradle test --tests TestString2.repeatFrontTest
+        timeout: 10
+        max-score: 2
+    - name: xyzMiddleTest
+      id: xyzmiddleTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: xyzMiddleTest
+        setup-command: ''
+        command: gradle test --tests TestString2.xyzMiddleTest
+        timeout: 10
+        max-score: 2
+    - name: oneTwoTest
+      id: onetwoTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: oneTwoTest
+        setup-command: ''
+        command: gradle test --tests TestString2.oneTwoTest
+        timeout: 10
+        max-score: 2
+    - name: plusOutTest
+      id: plusoutTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: plusOutTest
+        setup-command: ''
+        command: gradle test --tests TestString2.plusOutTest
+        timeout: 10
+        max-score: 2
+    - name: catDogTest
+      id: catdogTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: catDogTest
+        setup-command: ''
+        command: gradle test --tests TestString2.catDogTest
+        timeout: 10
+        max-score: 2
+    - name: xyzThereTest
+      id: xyzthereTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: xyzThereTest
+        setup-command: ''
+        command: gradle test --tests TestString2.xyzThereTest
+        timeout: 10
+        max-score: 2
+    - name: mixStringTest
+      id: mixstringTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: mixStringTest
+        setup-command: ''
+        command: gradle test --tests TestString2.mixStringTest
+        timeout: 10
+        max-score: 2
+    - name: repeatSeparatorTest
+      id: repeatseparatorTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: repeatSeparatorTest
+        setup-command: ''
+        command: gradle test --tests TestString2.repeatSeparatorTest
+        timeout: 10
+        max-score: 2
+    - name: getSandwichTest
+      id: getsandwichTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: getSandwichTest
+        setup-command: ''
+        command: gradle test --tests TestString2.getSandwichTest
+        timeout: 10
+        max-score: 2
+    - name: zipZapTest
+      id: zipzapTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: zipZapTest
+        setup-command: ''
+        command: gradle test --tests TestString2.zipZapTest
+        timeout: 10
+        max-score: 2
+    - name: wordEndsTest
+      id: wordendsTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: wordEndsTest
+        setup-command: ''
+        command: gradle test --tests TestString2.wordEndsTest
+        timeout: 10
+        max-score: 2
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        DOUBLECHARTEST_RESULTS: "${{steps.doublecharTest.outputs.result}}"
+        COUNTCODETEST_RESULTS: "${{steps.countcodeTest.outputs.result}}"
+        BOBTHERETEST_RESULTS: "${{steps.bobThereTest.outputs.result}}"
+        REPEATENDTEST_RESULTS: "${{steps.repeatEndTest.outputs.result}}"
+        PREFIXAGAINTEST_RESULTS: "${{steps.prefixAgainTest.outputs.result}}"
+        SAMESTARCHARTEST_RESULTS: "${{steps.sameStarCharTest.outputs.result}}"
+        STAROUTTEST_RESULTS: "${{steps.starOutTest.outputs.result}}"
+        COUNTHITEST_RESULTS: "${{steps.countHiTest.outputs.result}}"
+        ENDOTHERTTEST_RESULTS: "${{steps.endOtherTest.outputs.result}}"
+        XYBALANCETEST_RESULTS: "${{steps.xyBalanceTest.outputs.result}}"
+        REPEATFRONTTEST_RESULTS: "${{steps.repeatFrontTest.outputs.result}}"
+        XYZMIDDLETEST_RESULTS: "${{steps.xyzMiddleTest.outputs.result}}"
+        ONETWOTEST_RESULTS: "${{steps.oneTwoTest.outputs.result}}"
+        PLUSOUTTEST_RESULTS: "${{steps.plusOutTest.outputs.result}}"
+        CATDOGTEST_RESULTS: "${{steps.catDogTest.outputs.result}}"
+        XYZTHERETEST_RESULTS: "${{steps.xyzThereTest.outputs.result}}"
+        MIXSTRINGTEST_RESULTS: "${{steps.mixStringTest.outputs.result}}"
+        REPEATSEPARATORTTEST_RESULTS: "${{steps.repeatSeparatorTest.outputs.result}}"
+        GETSANDWICHTEST_RESULTS: "${{steps.getSandwichTest.outputs.result}}"
+        ZIPZAPTEST_RESULTS: "${{steps.zipZapTest.outputs.result}}"
+        WORDENDSTEST_RESULTS: "${{steps.wordEndsTest.outputs.result}}"
+      with:
+        runners: doublecharTest,countcodeTest,bobThereTest,repeatEndTest,prefixAgainTest,sameStarCharTest,starOutTest,countHiTest,endOtherTest,xyBalanceTest,repeatFrontTest,xyzMiddleTest,oneTwoTest,plusOutTest,catDogTest,xyzThereTest,mixStringTest,repeatSeparatorTest,getSandwichTest,zipZapTest,wordEndsTest
