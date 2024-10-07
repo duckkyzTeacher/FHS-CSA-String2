@@ -47,9 +47,9 @@ public class TestString2 {
 
     @Test
     public void prefixAgainTest() {
-        assertEquals(true, string2.prefixAgain("ababc"));
+        assertEquals(true, string2.prefixAgain("ababcxyzabazy"));
         assertEquals(false, string2.prefixAgain("ababc"));
-        assertEquals(true, string2.prefixAgain("ababcabc"));
+        assertEquals(true, string2.prefixAgain("toy car toyota"));
     }
 
     @Test
