@@ -42,7 +42,7 @@ public class TestString2 {
     public void repeatEndTest() {
         assertEquals("lolo", string2.repeatEnd("Hello", 2));
         assertEquals("abab", string2.repeatEnd("ab", 2));
-        assertEquals("xxx", string2.repeatEnd("xxxx", 3));
+        assertEquals("xxxxxxxxx", string2.repeatEnd("xxxx", 3));
     }
 
     @Test
@@ -54,15 +54,15 @@ public class TestString2 {
 
     @Test
     public void sameStarCharTest() {
-        assertEquals(true, string2.sameStarChar("xy*abc*def"));
-        assertEquals(false, string2.sameStarChar("xy*ab*cd*ef"));
-        assertEquals(true, string2.sameStarChar("*abc*def*"));
+        assertEquals(true, string2.sameStarChar("xa*abc*cef"));
+        assertEquals(false, string2.sameStarChar("xy*yb*ce*ef"));
+        assertEquals(true, string2.sameStarChar("i*iby*yef*f"));
     }
 
     @Test
     public void starOutTest() {
         assertEquals("ad", string2.starOut("ab*cd"));
-        assertEquals("ab", string2.starOut("ab*cd*ef"));
+        assertEquals("af", string2.starOut("ab*cd*ef"));
         assertEquals("", string2.starOut("**"));
     }
 
@@ -90,7 +90,7 @@ public class TestString2 {
     @Test
     public void repeatFrontTest() {
         assertEquals("ChocChocChocChoc", string2.repeatFront("Chocolate", 4));
-        assertEquals("ab", string2.repeatFront("abcd", 2));
+        assertEquals("abab", string2.repeatFront("abcd", 2));
         assertEquals("a", string2.repeatFront("a", 1));
     }
 
@@ -98,27 +98,27 @@ public class TestString2 {
     public void xyzMiddleTest() {
         assertEquals(true, string2.xyzMiddle("abcxyz123"));
         assertEquals(false, string2.xyzMiddle("abcxyz12"));
-        assertEquals(true, string2.xyzMiddle("xyz123xyz"));
+        assertEquals(false, string2.xyzMiddle("xyz123xyz"));
     }
 
     @Test
     public void oneTwoTest() {
-        assertEquals("bcddef", string2.oneTwo("abcdef"));
-        assertEquals("xyzxyz", string2.oneTwo("xyzxyz"));
-        assertEquals("", string2.oneTwo("ab"));
+        assertEquals("bcaefd", string2.oneTwo("abcdef"));
+        assertEquals("yzxyzx", string2.oneTwo("xyzxyz"));
+        assertEquals("cat", string2.oneTwo("tca"));
     }
 
     @Test
     public void plusOutTest() {
-        assertEquals("---+++---", string2.plusOut("abcxyz", "xyz"));
-        assertEquals("a--a", string2.plusOut("aabb", "ab"));
-        assertEquals("---", string2.plusOut("abcdef", "xyz"));
+        assertEquals("---+", string2.plusOut("abcxyz", "xyz"));
+        assertEquals("-+-", string2.plusOut("aabb", "ab"));
+        assertEquals("------", string2.plusOut("abcdef", "xyz"));
     }
 
     @Test
     public void catDogTest() {
-        assertEquals(true, string2.catDog("catdogcat"));
-        assertEquals(false, string2.catDog("catdog"));
+        assertEquals(false, string2.catDog("catdogcat"));
+        assertEquals(true, string2.catDog("catdog"));
         assertEquals(true, string2.catDog("dogcat"));
     }
 
@@ -139,7 +139,7 @@ public class TestString2 {
     @Test
     public void repeatSeparatorTest() {
         assertEquals("WordXWordXWord", string2.repeatSeparator("Word", "X", 3));
-        assertEquals("abcbcbcb", string2.repeatSeparator("abc", "b", 3));
+        assertEquals("abcbabc", string2.repeatSeparator("abc", "b", 2));
         assertEquals("xyz", string2.repeatSeparator("xyz", "X", 1));
     }
 
@@ -153,14 +153,14 @@ public class TestString2 {
     @Test
     public void zipZapTest() {
         assertEquals("zz", string2.zipZap("zipzap"));
-        assertEquals("z", string2.zipZap("zippzap"));
-        assertEquals("zap", string2.zipZap("zaps"));
+        assertEquals("zpz", string2.zipZap("zippzap"));
+        assertEquals("zs", string2.zipZap("zaps"));
     }
 
     @Test
-    public void wordEndsTest() {
-        assertEquals("aabcxxbc", string2.wordEnds("abcxxabc", "abc"));
-        assertEquals("aabc", string2.wordEnds("abcxxabc", "abc"));
-        assertEquals("", string2.wordEnds("abcdef", "ghi"));
+    public void wordEndsTest() {       
+        assertEquals("c13i", string2.wordEnds("abcXY123XYijk", "XY"));
+        assertEquals("13", string2.wordEnds("XY123XY", "XY"));
+        assertEquals("11", string2.wordEnds("XY1XY", "XY"));
     }
 }
